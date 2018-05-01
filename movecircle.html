@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>TEST audio canvas.js</title>
+		<script src="test.js"></script>
+<script>
+	window.onload = function () {
+
+		var canvas=document.getElementById("dnapaper"),
+		c = canvas.getContext("2d");
+
+		c.fillRect(0, 0, canvas.width, canvas.height);
+
+		var angle=0.001;
+
+		setInterval(function(){
+			angle++;
+			posX = 250 + Math.cos(angle) * 125;
+			posY = 250 + Math.sin(angle) * 125;
+
+			c.fillStyle = "rgba(0,0,0,0.1)";
+			c.fillRect(0, 0, canvas.width, canvas.height);
+
+			c.fillStyle = "white";
+			c.beginPath();
+			c.arc(posX,posY,40,0,Math.PI *2, false);
+			c.fill();
+		}, 160);
+	}
+
+	/*make ball move in a circilar path
+var posX = 0;
+	  c.clearRect(0,0,width,height);
+
+	  c.fillStyle='#000';
+		var nbr_circles = 10;
+		var width = 500;
+		var height = 500;
+
+	  var lg_rad = (width/2) * .5;
+	  var lg_circ = 2*Math.PI*lg_rad;
+	  var sm_rad = (lg_circ / nbr_circles) / 2;
+	  var cx = width/2;
+	  var cy = height/2;
+
+	  for (var i = 1; i <= nbr_circles; ++i) {
+	    c.beginPath();
+	    var angle = i*2*Math.PI/nbr_circles;
+	    var x = cx + Math.cos(angle) * lg_rad;
+	    var y = cy + Math.sin(angle) * lg_rad;
+	    c.arc(x, y, sm_rad-i*2.5, 0, 2*Math.PI, false);
+	    c.fill();
+	  }
+}
+*/
+</script>
+	</head>
+	<body>
+
+<canvas id="dnapaper" width="500" height="500">
+
+
+</canvas>
+
+	</body>
+</html>
